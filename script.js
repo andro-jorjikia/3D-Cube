@@ -60,7 +60,6 @@ window.addEventListener('mousemove', e => {
   targetRotationX = Math.min(90, Math.max(-90, targetRotationX));
 });
 
-// Zoom with mouse wheel
 window.addEventListener('wheel', e => {
   e.preventDefault();
 
@@ -69,6 +68,6 @@ window.addEventListener('wheel', e => {
   targetZoom = Math.min(zoomMax, Math.max(zoomMin, targetZoom));
 }, { passive: false });
 
-targetZoom = -300; // initial zoom out
+targetZoom = -300; 
 
 animate();
