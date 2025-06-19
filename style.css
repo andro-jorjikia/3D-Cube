@@ -1,0 +1,56 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #fff;  /* pure white background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: grab;
+  overflow: hidden;
+}
+
+.scene {
+  width: 1000px;
+  height: 400px;
+  perspective: 1000px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cube {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: grab;
+  transform-origin: center center;
+}
+
+.face {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: transparent; /* fully transparent */
+  border: 2px solid black; /* black wireframe */
+  border-radius: 6px;
+  box-sizing: border-box;
+  /* no shadows or other effects */
+}
+
+/* Cube faces positioning */
+.face-front  { transform: translateZ(125px); }
+.face-back   { transform: rotateY(180deg) translateZ(125px); }
+.face-right  { transform: rotateY(90deg) translateZ(125px); }
+.face-left   { transform: rotateY(-90deg) translateZ(125px); }
+.face-top    { transform: rotateX(90deg) translateZ(125px); }
+.face-bottom { transform: rotateX(-90deg) translateZ(125px); }
